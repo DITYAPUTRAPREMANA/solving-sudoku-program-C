@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-//function untuk memeriksa apakah nomor dapat ditempatkan di sel tertentu
+//function to check whether a number can be placed in a specific cell
 int check(int sudoku[][9], int baris, int kolom, int nomor){
     //cek baris dan kolom
     for(int i = 0; i < 9; i++){
@@ -8,7 +8,7 @@ int check(int sudoku[][9], int baris, int kolom, int nomor){
             return 0;
         }
     }
-    //cek kotak 3x3
+//check 3x3 box
     int mulaibaris = baris - baris % 3;
     int mulaikolom = kolom - kolom % 3;
     for(int i = 0; i < 3; i++){
@@ -21,7 +21,7 @@ int check(int sudoku[][9], int baris, int kolom, int nomor){
     return 1;
 }
 
-//function penyelesaian sudoku
+//function solving sudoku 
 int solveSudoku(int sudoku[][9], int baris, int kolom){
     if(baris == 9 && kolom == 9){
         return 1;
@@ -44,7 +44,7 @@ int solveSudoku(int sudoku[][9], int baris, int kolom){
     sudoku[baris][kolom] = 0;
     return 0;
 }
-
+//input fucntion 
 int main() {
     char ulang;
     int sudoku[9][9];
